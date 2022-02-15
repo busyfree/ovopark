@@ -8,7 +8,7 @@ type CommonReqFields struct {
 	AccessKeyId  string `json:"_akey" url:"_akey"`
 	CryptoMethod string `json:"_sm" url:"_sm"`
 	RequestTime  string `json:"_timestamp" url:"_timestamp"`
-	ReqToken     string `json:"_sig" url:""`
+	ReqToken     string `json:"_sig" url:"-"`
 	RespFormat   string `json:"_format" url:"_format"`
 }
 
