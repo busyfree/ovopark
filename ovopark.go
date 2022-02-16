@@ -95,6 +95,9 @@ func (s *OVOPark) APIRequest(ctx context.Context, apiName string, req, response 
 		ErrorStructValue.Field(errorErrMsgIndex).Set(reflect.ValueOf(resp2.ErrMsg))
 	} else {
 		err = decodeJSONHttpResponse(bytes.NewReader(bodyByte), response)
+		if err != nil {
+			return
+		}
 	}
 	switch errCode := ErrorErrCodeValue.Int(); errCode {
 	case ErrCodeOK:
